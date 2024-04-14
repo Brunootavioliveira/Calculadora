@@ -1,29 +1,34 @@
 var resultado = document.getElementById('resultado')
 
-function soma(){
-    var n1 = parseFloat(document.getElementById('numero1').value);
-    var n2 = parseFloat(document.getElementById('numero2').value);
-    var soma = n1 + n2
-    resultado.innerHTML = soma
+function insert(num)
+{
+    var numero = document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = numero + num;
 }
 
-function subtracao(){
-    var n1 = parseFloat(document.getElementById('numero1').value);
-    var n2 = parseFloat(document.getElementById('numero2').value);
-    var subtracao = n1 - n2
-    resultado.innerHTML = subtracao
+function clean()
+{
+    document.getElementById('resultado').innerHTML = "";
 }
 
-function multiplicacao(){
-    var n1 = parseFloat(document.getElementById('numero1').value);
-    var n2 = parseFloat(document.getElementById('numero2').value);
-    var multiplicacao = n1 * n2
-    resultado.innerHTML = multiplicacao
+function back()
+{
+    var resultado = document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
 }
 
-function divisao(){
-    var n1 = parseFloat(document.getElementById('numero1').value);
-    var n2 = parseFloat(document.getElementById('numero2').value);
-    var divisao = n1 / n2
-    resultado.innerHTML = divisao
+function calcular()
+{
+    var resultado = document.getElementById('resultado').innerHTML;
+    if(resultado)
+    {
+        document.getElementById('resultado').innerHTML = eval(resultado);
+    }
+    else
+    {
+        document.getElementById('resultado').innerHTML = "Sem calculo";
+        setTimeout(function() {
+            document.getElementById('resultado').innerHTML = '';
+        }, 400);
+    }
 }

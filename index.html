@@ -7,22 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Calculadora HTML + JS</h1>
-    <div class="num">
-        <input  type="number" id="numero1" placeholder="Digite aqui">
-        <input  type="number" id="numero2" placeholder="Digite aqui">
+    <div class="fundo">
+        <div class="calculadora">
+            <h1>Calculadora</h1>
+            <p id="resultado"></p>           
+            <table>
+                <tr class="simbolos1">
+                    <td><button class="btn" id="apagarC" onclick= "clean()">C</button></td>
+                    <td><button class="btn" id="btnPorcentagem" onclick= "back()"><</button></td>
+                    <td><button class="btn" id="btnDivisao" onclick= "insert('/')">/</button></td>
+                    <td><button class="btn" id="btnMultiplicacao" onclick= "insert('*')">X</button></td>
+                </tr>
+                <tr class="simbolos2">
+                    <td><button class="btn"  onclick= "insert('7')">7</button></td>
+                    <td><button class="btn"  onclick= "insert('8')">8</button></td>
+                    <td><button class="btn"  onclick= "insert('9')">9</button></td>
+                    <td><button class="btn"  onclick= "insert('+')">+</button></td>
+                </tr>
+                <tr class="simbolos3">
+                    <td><button class="btn"  onclick= "insert('4')">4</button></td>
+                    <td><button class="btn"  onclick= "insert('5')">5</button></td>
+                    <td><button class="btn"  onclick= "insert('6')">6</button></td>
+                    <td><button class="btn" onclick= "insert('-')">-</button></td>
+                </tr>
+                <tr class="simbolos4">
+                    <td><button class="btn"  onclick= "insert('1')">1</button></td>
+                    <td><button class="btn"  onclick= "insert('2')">2</button></td>
+                    <td><button class="btn"  onclick= "insert('3')">3</button></td>
+                    <td rowspan="2"><button class="btn" style="height: 105px;"id="igual" onclick= "calcular()">=</button></td>          
+                </tr>
+                <tr class="simbolos5">
+                    <td colspan="2"><button class="btn" style="width: 108px;" id="num0" onclick= "insert('0')">0</button></td>
+                    <td><button class="btn"  onclick= "insert('.')">.</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    
-    </div>
-    <div class="simbolos">
-        <button id="btnMais" onclick= "soma()">+</button>
-        <button id="btnMenos" onclick= "subtracao()">-</button>
-        <button id="btnMultiplicacao" onclick= "multiplicacao()">X</button>
-        <button id="btnDivisao" onclick= "divisao()">/</button>
-    </div>
-    <h1>Resultado: </h1>
-    <p class="para" id="resultado"></p>
-
 
     <script src="script.js"></script>
 </body>
